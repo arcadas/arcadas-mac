@@ -1,0 +1,3 @@
+# AWS
+
+alias ssh-aws-ec2-name='ssh ec2-user@<ip-address>'
