@@ -2,23 +2,30 @@
 
 ## System Preferences
 
-Check the following: Tap click, Natural scroll, Keyboard lang, Desktop shortcut, Background, Battery - Display turn off, Accessibility - Reduce Transparency, Dock position left (remove unnecessary items, auto hide), Menubar - Battery - Show percentage, Clock - Show seconds, Sound - Play sound on startup.
+Open a new terminal and run the .macos file and reboot.
 
-Set up Internet Accounts.
+Check and set:
+- Tap click, Natural scroll
+- Keyboard lang, Desktop shortcut
+- Background
+- Battery - Display turn off
+- Accessibility - Reduce Transparency
+- Dock position left (remove unnecessary items, auto hide)
+- Menubar - Battery - Show percentage, Clock - Show seconds
+- Sound - Play sound on startup.
+- Set up Internet Accounts.
 
 ## Apps
 
 Open Safari and download Chrome. Sign in (copy password from Password app).
 
-Download and install: Tap
-iStat, Dropbox, Slack, Docker, VSCode, Sequel Pro, Insomnia, iTerm2, Nodejs
+Download and install:
+- iStat, Dropbox, Slack, iTerm2, MonitorControl Lite
+- Docker, VSCode, Sequel Pro, Insomnia, Nodejs
 
 VSCode: Open the Command Palette (Cmd+Shift+P) and type 'shell command' to find the Shell Command: Install 'code' command in PATH command.
 
-```json
-openeditors: 0
-enablePreview: false
-```
+Sign in to VSCode with GitHub account to sync.
 
 ## iTerm2
 
@@ -30,6 +37,8 @@ Change shell to bash
 ```sh
 chsh -s /bin/bash
 ```
+
+Note: Restart and copy all bash files.
 
 Install brew (https://brew.sh/).
 

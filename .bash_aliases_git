@@ -1,3 +1,22 @@
+alias yarn-install-build-test='yarn && yarn build && yarn test'
+alias yibt='yarn-install-build-test'
+alias yarn-cache-clean-all='yarn cache clean --all'
+
+alias gcoma='git checkout main'
+alias gcomap='git checkout main && git pull'
+alias git-ls-remote-tags-origin='git ls-remote --tags origin'
+alias git-tag-version='git tag $1'
+alias git-push-origin-tags='git push origin --tags'
+alias npm-version-patch='npm version -m "build: patch version bump" patch && echo "Push and merge to main and use git push --tags"'
+alias git-push-tags='git push --tags'
+alias git-reset-hard='git reset --hard origin/main'
+
+f_gctnbp() {
+  git branch $1
+  git reset --hard HEAD~1
+  git checkout $1
+  git push -u origin $1
+}
 
 f_grbd() {
 	git push origin :$1
