@@ -152,6 +152,12 @@ cat ~/.ssh/id_ed25519.pub | pbcopy
 
 Add key to GitHub: https://github.com/settings/keys
 
+To change HTTPS to SSH
+
+```sh
+git remote set-url origin git@github.com:arcadas/arcadas-mac.git
+```
+
 ## Hosts
 
 ```sh
