@@ -144,10 +144,10 @@ git config --global user.name "<firstname lastname>"
 git config --global user.email "<e-mail>"
 
 # Generate SSH key and set it to GitHub
-ssh-keygen -t rsa -b 4096 -C "<email@address.com>"
-
+ssh-keygen -t ed25519 -C "<email@address.com>"
+eval "$(ssh-agent -s)"
 # Copy public key to clipboard
-cat ~/.ssh/id_rsa.pub | pbcopy
+cat ~/.ssh/id_ed25519.pub | pbcopy
 ```
 
 Add key to GitHub: https://github.com/settings/keys
