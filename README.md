@@ -1,27 +1,60 @@
 # Arcadas MacBook Environment
 
-## System Preferences
+- Log in with iCloud account
+- Open Safari and download Chrome
+- Log in into Chrome (MacOS Passwords)
+- Download and check the [.macos](https://github.com/arcadas/arcadas-mac/blob/main/.macos) file
+- Run it from the Terminal app
 
-Open a new terminal and run the .macos file and reboot.
+```sh
+cd Downloads
+chmod +x .macos
+./.macos
+```
 
-Check and set:
-- Tap click, Natural scroll
-- Keyboard lang, Desktop shortcut
-- Background
-- Battery - Display turn off
-- Accessibility - Reduce Transparency
-- Dock position left (remove unnecessary items, auto hide)
-- Menubar - Battery - Show percentage, Clock - Show seconds
-- Sound - Play sound on startup.
-- Set up Internet Accounts.
+- Restart the computer
 
-## Apps
+## System Settings
 
-Open Safari and download Chrome. Sign in (copy password from Password app).
+- Control Center
+  - Bluetooth: Show in Menu Bar
+  - Battery: Show Percentage
+  - Clock - Clock Options...
+    - Show Date: always
+    - Display the time with secounds: on
+- Privacy & Security
+  - Screen Recording: add Chrome
+- Desktop & Dock
+  - Position on screen: Left
+  - Menu Bar - Automatically hide...: Never
+  - Show indicators for open applications: off
+  - Show recent applications in Dock: off
+  - Hot Corners...: disable all
+- Lock Screen
+  - Start Screen Saver when inactive: Never
+- Accessibility
+  - Display: Reduce transparency: on
+- Keyboard
+  - Keyboard Shortcuts
+    - Mission Control: Mission Control: Switch to Desktop 1: CMD + Enter
+  - Input Sources
+    - Edit: Add (+): English (ABC)
+- Trackpad
+  - Force Click: off
+  - Tap to click: off -> on
+- Internet Accounts
+  - Add accounts (MacOS Passwords)
+    - Google: Calendars
 
-Download and install:
-- iStat, Dropbox, Slack, iTerm2, MonitorControl Lite
-- Docker, VSCode, Sequel Pro, Insomnia, Nodejs
+Remove unnecessary app icons from dock bar.
+
+## Applications
+
+- Dropbox, iStat, iTerm2
+- Slack, Zoom, Skype, Mail
+- MonitorControl Lite, VLC
+- Docker, VSCode, Sequel Ace, Insomnia
+- Nodejs
 
 VSCode: Open the Command Palette (Cmd+Shift+P) and type 'shell command' to find the Shell Command: Install 'code' command in PATH command.
 
