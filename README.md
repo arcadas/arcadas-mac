@@ -12,7 +12,7 @@ chmod +x .macos
 ./.macos
 ```
 
-- Restart the computer
+Restart the computer
 
 ## System Settings
 
@@ -48,17 +48,32 @@ chmod +x .macos
 
 Remove unnecessary app icons from dock bar.
 
+Finder -> Preferences -> General tab -> New Finder windows show
+
+Open a new Finder window and right-click “Recents” in the sidebar. In the menu that appears, select “Remove from Sidebar.”
+
 ## Applications
 
 - Dropbox, iStat, iTerm2
 - Slack, Zoom, Skype, Mail
 - MonitorControl Lite, VLC
 - Docker, VSCode, Sequel Ace, Insomnia
-- Nodejs
 
-VSCode: Open the Command Palette (Cmd+Shift+P) and type 'shell command' to find the Shell Command: Install 'code' command in PATH command.
+VSCode
+- Sign in to VSCode with GitHub account to sync.
+- Open the Command Palette (Cmd+Shift+P) and type 'shell command' to find the Shell Command: Install 'code' command in PATH command.
+- Open terminal (CMD + T) and delete zsh shell and open settings.json and paste this settings
 
-Sign in to VSCode with GitHub account to sync.
+```json
+"terminal.integrated.inheritEnv": false,
+"terminal.integrated.defaultProfile.osx": "bash",
+"terminal.integrated.profiles.osx": {
+  "bash": {
+    "path": "bash",
+    "args": ["-l"]
+  }
+},
+```
 
 ## iTerm2
 
@@ -71,13 +86,55 @@ Change shell to bash
 chsh -s /bin/bash
 ```
 
-Note: Restart and copy all bash files.
+Note: Restart iTerm2
 
 Install brew (https://brew.sh/).
 
 ```sh
-brew install git vim mc wget openssh nvm awscli
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Add to PATH
+(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/arcadas/.profile
+eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
+
+Install CLI apps
+
+```sh
+brew install git vim mc wget openssh nvm awscli node php
+
+# Install node and yarn
+nvm install --lts
+nvm use --lts
+node -v
+npm install --global yarn
+
+# Install PHP
+brew install php
+# Install PHP 7.4 (unsupported)
+brew tap shivammathur/php
+brew install shivammathur/php/php@7.4
+brew link php@7.4
+```
+
+Clone arcadas-mac repo
+
+```sh
+mkdir ~/git
+cd ~/git
+git clone https://github.com/arcadas/arcadas-mac.git
+
+# Copy files into home
+cd arcadas-mac
+cp -a nginx-proxy/. ~/git/arcadas/nginx-proxy
+cp .ssh/config ~/.ssh/
+cp .vimrc ~/
+cp .bash_* ~/
+cp .profile ~/
+source ~/.profile
+```
+
+Setup font size (14) in iTerm
 
 ## SSH and GitHub
 
@@ -85,30 +142,15 @@ brew install git vim mc wget openssh nvm awscli
 # Set git globals
 git config --global user.name "<firstname lastname>"
 git config --global user.email "<e-mail>"
+
 # Generate SSH key and set it to GitHub
 ssh-keygen -t rsa -b 4096 -C "<email@address.com>"
-# Clone this repo
-mkdir ~/git
-cd ~/git
-git clone git@github.com:arcadas/arcadas-mac.git
+
+# Copy public key to clipboard
+cat ~/.ssh/id_rsa.pub | pbcopy
 ```
 
-## MacOS file
-
-```sh
-chmod +x .macos
-./.macos
-```
-
-## Bash and other dotfiles
-
-```sh
-cd
-copy ~/git/arcadas-mac/.profile .
-copy ~/git/arcadas-mac/*bash* .
-copy ~/git/arcadas-mac/.vimrc .
-# Restart iTerm
-```
+Add key to GitHub: https://github.com/settings/keys
 
 ## Hosts
 
