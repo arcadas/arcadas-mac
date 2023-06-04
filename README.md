@@ -56,6 +56,7 @@ Open a new Finder window and right-click “Recents” in the sidebar. In the me
 
 - Dropbox, iStat, iTerm2
 - Slack, Zoom, Skype, Mail
+- Bitwarden
 - MonitorControl Lite, VLC
 - Docker, VSCode, Sequel Ace, Insomnia
 
@@ -101,7 +102,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 Install CLI apps
 
 ```sh
-brew install git vim mc wget openssh nvm awscli node php
+brew install git vim mc wget openssh nvm awscli node php composer
 
 # Install node and yarn
 nvm install --lts

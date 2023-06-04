@@ -112,9 +112,8 @@ if ! shopt -oq posix; then
 fi
 
 # Homebrew
-# eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
